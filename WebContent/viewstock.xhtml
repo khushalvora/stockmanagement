@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+<div class="container">
+            <div class="well">
+                <legend>Search Data</legend>
+
+                <div class="row">
+
+                    <h:form>
+                    <h:messages id="message1" globalOnly="true" style="color:red;margin:8px;"/>
+					
+				
+                        <label for="sel1">Stock: </label>
+                        <h:selectOneMenu styleClass="form-control" id="symbol" value="#{stockData.selectedSymbol}">
+                            <f:selectItems value="#{stockData.availableSymbols}" />
+                        </h:selectOneMenu>
+
+                        <label for="sel1">Interval: </label>
+                        <h:selectOneMenu id="interval" styleClass="form-control" value="#{stockData.selectedInterval}">
+                            <f:selectItems value="#{stockData.availableIntervals}" />
+                        </h:selectOneMenu>
+                        <br />
+                        <h:commandButton value="Get Data" action="#{stockData.timeseries}" styleClass="btn btn-success" />
+                        <h:commandButton value="Add to watchlist" action="#{stockData.addw()}" styleClass="btn btn-success" />
+                    </h:form>
+                </div>
+
+                <h:panelGroup rendered="#{not empty stockData.table1Markup}">
+                    <h:outputText value="#{stockData.table1Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty stockData.table2Markup}">
+                    <h:outputText value="#{stockData.table2Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+            </div>
+</div>
+</h:body>
+</html>

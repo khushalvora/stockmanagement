@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+<div class="container">
+<div class="well">
+ <legend>Search Data</legend>
+
+                <div class="row">
+<h:form id="purchase">
+Stock Name: <h:inputText  id="symbol" styleClass="form-control purchaseSymbol" value="#{watchlist.selectedSymbol}" required="true"/><br />
+<label for="sel1">Interval: </label>
+                        <h:selectOneMenu id="interval" styleClass="form-control" value="#{watchlist.selectedInterval}">
+                            <f:selectItems value="#{watchlist.availableIntervals}" />
+                        </h:selectOneMenu>
+                        History Count: <h:inputText  id="historycount" styleClass="form-control purchaseSymbol" value="#{watchlist.count}" required="true"/>
+                        <br />
+                        <h:commandButton value="Get Data" action="#{watchlist.timeseries1}" styleClass="btn btn-success" />
+                        <br />
+                        <h:commandButton value="Go back to Watchlist" action="watchlist.xhtml" styleClass="btn btn-success" />
+</h:form>
+</div>
+<h:panelGroup rendered="#{not empty watchlist.table1Markup}">
+                    <h:outputText value="#{watchlist.table1Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty watchlist.table3Markup}">
+                    <h:outputText value="#{watchlist.table3Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+                </div>
+                </div>
+</h:body>
+</html>

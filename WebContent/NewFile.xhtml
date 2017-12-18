@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+<div class="container">
+<div class="row">
+	<div class="col-md-0.5"></div>
+	<div class="col-md-2">
+		<div class="list-group nav nav-stacked">
+		<h:form>
+    		<a class="list-group-item" href="login.xhtml" data-toggle="pill" style="height: 100px;">View Stocks</a>
+    		<a class="list-group-item" href="#buystocks" data-toggle="pill" style="height: 100px;">Buy Stocks</a>
+    		<a class="list-group-item" href="#sellstocks" data-toggle="pill" style="height: 100px;">Sell Stock</a>
+    	</h:form>
+  		</div>
+	</div>
+
+	<div class="col-md-9">
+		<div class="tab-content">
+			<div class="tab-pane" id="viewstocks">
+			<h:form>
+				In View Stocks
+			</h:form>
+			</div>
+			<div class="tab-pane" id="buystocks">
+			<h:form>
+				In Buy Stocks
+			</h:form>
+			</div>
+			<div class="tab-pane" id="sellstocks">
+			<h:form>
+				In Sell Stocks
+			</h:form>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</h:body>
+</html>

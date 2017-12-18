@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script>
+	function abc()
+	{
+		window.top.location.href="login.xhtml";
+	}
+	</script>
+</h:head>
+<h:body>
+<div class="container">
+<div class="row">
+	<div class="col-md-2" style="height: 50px;">#{firstname}</div>
+	<div class="col-md-8" style="height: 50px;"></div>
+	<div class="col-md-2" style="height: 50px;">
+		<h:form>
+		<div class="form-group">
+			<h:commandButton value="Logout" styleClass="btn btn-primary form-control" action="#{login.logout()}"/></div>
+		</h:form>
+	</div>
+</div>
+</div>
+</h:body>
+</html>

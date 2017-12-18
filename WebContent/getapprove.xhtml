@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</h:head>
+<h:body>
+<div class="container">
+<div class="row">
+<h:form>
+						<div class="form-group">
+							<div class="col-md-3">
+								<p></p>
+								<h:outputText value="License Number" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="licnum" value="#{approve.license}" a:placeholder="license num"
+									styleClass="form-control" required="true"
+									requiredMessage="license is required" />
+								<p></p>
+							</div>
+							<h:message for="licnum" style="color:red;margin:8px;" />
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-3">
+								<p></p>
+								<h:outputText value="Commission Percentage" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="commission" value="#{approve.commission}" a:placeholder="Commission Percentage"
+									styleClass="form-control" required="true"
+									requiredMessage="Commission % is required" />
+								<p></p>
+							</div>
+							<h:message for="commission" style="color:red;margin:8px;" />
+						</div>
+							<div class="form-group">
+							<h:messages style="color:red;margin:8px;"></h:messages> 
+						</div>
+						<div class="form-group">
+							<h:commandButton value="Send Request"
+								styleClass="btn btn-primary form-control" action="#{approve.sendr()}"/>
+						</div>
+		</h:form>				
+</div>
+</div>
+</h:body>
+</html>
