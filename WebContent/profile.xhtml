@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Register</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script type="text/javascript">
+	
+	</script>
+</h:head>
+<h:body>
+<div class="container">
+
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			
+			<h:form>
+
+						<div class="form-group">
+							<h:messages style="color:red;margin:8px;"></h:messages> 
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-3">
+								<h:outputText value="First Name" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="firstname" value="#{register.firstname}" a:placeholder="First Name"
+									styleClass="form-control" required="true"
+									requiredMessage="First Name is required" />
+								<p></p>
+							</div>
+							<h:message for="firstname" style="color:red;margin:8px;" />
+						</div>
+						
+							<div class="form-group">
+							<div class="col-md-3">
+								<h:outputText value="Last Name" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="lastname" value="#{register.lastname}" a:placeholder="Last Name"
+									styleClass="form-control" required="true"
+									requiredMessage="Last Name is required" />
+								<p></p>
+							</div>
+							<h:message for="lastname" style="color:red;margin:8px;" />
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-3">
+								<h:outputText value="Personal Email" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="email" value="#{register.email}"
+									a:placeholder="abc@example.com" styleClass="form-control"
+									validatorMessage="This is not a valid email" required="true"
+									requiredMessage="email can not be empty">
+									<p></p>
+									<f:validateRegex
+										pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+								</h:inputText>
+								<p></p>
+							</div>
+							<h:message for="email" style="color:red;margin:8px;" />
+						</div>
+						
+								<div class="form-group">
+							<div class="col-md-3">
+								<h:outputText value="Phone Number" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="phonenumber" value="#{register.phonenumber}"
+									a:placeholder="123456789" styleClass="form-control"
+									validatorMessage="This is not a valid phone" required="true"
+									requiredMessage="phone number can not be empty">
+									<p></p>
+									<f:validateRegex
+										pattern="^([+]?[\d]+)?$" />
+								</h:inputText>
+								<p></p>
+							</div>
+							<h:message for="phonenumber" style="color:red;margin:8px;" />
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-3">
+								<p></p>
+								<h:outputText value="Address" />
+							</div>
+							<div class="col-md-9">
+								<h:inputText id="address" value="#{register.address}" a:placeholder="1400 Washington Ave."
+									styleClass="form-control" required="true"
+									requiredMessage="address is required" />
+								<p></p>
+							</div>
+							<h:message for="address" style="color:red;margin:8px;" />
+						</div>
+								<div class="form-group">
+							<div class="col-md-3">
+								<h:outputText value="Password" />
+							</div>
+							<div class="col-md-9">
+								<h:inputSecret id="password" value="#{register.password}" a:placeholder="Password"
+									styleClass="form-control" required="true"
+									requiredMessage="password is required" />
+								<p></p>
+							</div>
+							<h:message for="password" style="color:red;margin:8px;" />
+						</div>
+								
+						<div class="form-group">
+							<h:commandButton value="Update"
+								styleClass="btn btn-primary form-control" action="#{register.register()}"/>
+						</div>
+						</h:form>
+		</div>
+		<div class="col-md-1"></div>
+		
+	</div>
+</h:body>
+</html>
